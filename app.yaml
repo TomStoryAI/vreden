@@ -1,6 +1,5 @@
-runtime: python27
+runtime: nodejs10
 api_version: 1
-threadsafe: yes
 
 env_variables:
   API_KEY: AIzaSyAS20Dpq4SpnUJYHM8h605p8VFda0VePVA
@@ -10,17 +9,7 @@ env_variables:
 handlers:
 
   - url: /
-    static_files: dist/index.html
-    upload: dist/index.html
+    static_files: dist/vredenOnline/index.html
+    upload: dist/vredenOnline/index.html
   - url: /
-    static_dir: dist
-
-skip_files:
-  - e2e/
-  - node_modules/
-  - src/
-  - ^(.*/)?\..*$
-  - ^(.*/)?.*\.json$
-  - ^(.*/)?.*\.md$
-  - ^(.*/)?.*\.yaml$
-  - ^LICENSE
+    static_dir: dist/vredenOnline
