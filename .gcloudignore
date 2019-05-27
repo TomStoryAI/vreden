@@ -6,3 +6,5 @@ src/
 ^(.*/)?.*\.md$
 ^(.*/)?.*\.yaml$
 ^LICENSE
+.git
+.gitignore
