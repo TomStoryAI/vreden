@@ -1,8 +1,8 @@
-  e2e/
-  node_modules/
-  src/
-  ^(.*/)?\..*$
-  ^(.*/)?.*\.json$
-  ^(.*/)?.*\.md$
-  ^(.*/)?.*\.yaml$
-  ^LICENSE
+e2e/
+node_modules/
+src/
+^(.*/)?\..*$
+^(.*/)?.*\.json$
+^(.*/)?.*\.md$
+^(.*/)?.*\.yaml$
+^LICENSE
