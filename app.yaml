@@ -2,10 +2,6 @@ runtime: python27
 api_version: 1
 threadsafe: yes
 
-env_variables:
-  API_KEY: AIzaSyB_l89KSMXjK--aRtY8QX1bSSEtclhXU7M
-
-
 handlers:
 
   - url: /
