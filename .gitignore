@@ -46,4 +46,4 @@ testem.log
 Thumbs.db
 
 /app.yml
-/app.yaml
+./app.yaml
