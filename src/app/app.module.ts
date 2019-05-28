@@ -12,6 +12,7 @@ import { HeaderComponent } from './header/header.component';
 import { ZXingScannerModule } from '@zxing/ngx-scanner';
 import { QrcodeComponent } from './qrcode/qrcode.component';
 import { HomeComponent } from './home/home.component';
+import { NgQrScannerModule } from 'angular2-qrscanner';
 
 
 @NgModule({
@@ -31,7 +32,8 @@ import { HomeComponent } from './home/home.component';
     MatIconModule,
     ZXingScannerModule,
     MatToolbarModule,
-    MDBBootstrapModule.forRoot()
+    MDBBootstrapModule.forRoot(),
+    NgQrScannerModule
   ],
   providers: [],
   bootstrap: [AppComponent]
