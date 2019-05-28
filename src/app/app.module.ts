@@ -6,10 +6,21 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
+import { FooterComponent } from './footer/footer.component';
+import { MDBBootstrapModule } from 'angular-bootstrap-md';
+import { HeaderComponent } from './header/header.component';
+import { ZXingScannerModule } from '@zxing/ngx-scanner';
+import { QrcodeComponent } from './qrcode/qrcode.component';
+import { HomeComponent } from './home/home.component';
+
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    FooterComponent,
+    HeaderComponent,
+    QrcodeComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
@@ -18,7 +29,9 @@ import { environment } from '../environments/environment';
     MatButtonModule, 
     MatCheckboxModule,
     MatIconModule,
-    MatToolbarModule
+    ZXingScannerModule,
+    MatToolbarModule,
+    MDBBootstrapModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]
