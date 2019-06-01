@@ -1,27 +1,28 @@
 # VredenOnline
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.8.
+This project is part of an initiative to digitze a german village called Vreden.
 
-## Development server
+In this project I have used Angular's PWA capacities, to create a QRCode Scanner for the real world. You should be able to access it here:
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+https://vreden-online.appspot.com/
 
-## Code scaffolding
+# Installation Instructions
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+run the following:
+```javascript
+npm install
+ng serve
+```
 
-## Build
+On your local device you can then head over to localhost:4200 to see the app in your preferred browser. 
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+# Deployment
 
-## Running unit tests
+For deployment purposes I am using google cloud. Simply create a Google Cloud Project, create an API Key and add it to app.yaml.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Afterwards run this:
+```javascript
+ng build --prod
+gcloud app deploy
+```
 
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
