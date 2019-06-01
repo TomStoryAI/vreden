@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import {MatButtonModule, MatCheckboxModule, MatIconModule, MatToolbarModule} from '@angular/material';
+import { MatSelectModule, MatSnackBarModule } from '@angular/material';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -12,7 +13,7 @@ import { HeaderComponent } from './header/header.component';
 import { ZXingScannerModule } from '@zxing/ngx-scanner';
 import { QrcodeComponent } from './qrcode/qrcode.component';
 import { HomeComponent } from './home/home.component';
-import { NgQrScannerModule } from 'angular2-qrscanner';
+import { CommonModule } from '@angular/common';
 
 
 @NgModule({
@@ -24,16 +25,15 @@ import { NgQrScannerModule } from 'angular2-qrscanner';
     HomeComponent
   ],
   imports: [
+    CommonModule,
     BrowserModule,
     AppRoutingModule,
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
-    MatButtonModule, 
-    MatCheckboxModule,
-    MatIconModule,
-    ZXingScannerModule,
-    MatToolbarModule,
+    ZXingScannerModule.forRoot(),
     MDBBootstrapModule.forRoot(),
-    NgQrScannerModule
+    MatSelectModule,
+    MatSnackBarModule,
+    BrowserAnimationsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

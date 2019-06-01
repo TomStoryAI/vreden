@@ -1,7 +1,6 @@
 runtime: nodejs10
 
-env_variables:
-  API_KEY: AIzaSyAS20Dpq4SpnUJYHM8h605p8VFda0VePVA
+
 
 
 

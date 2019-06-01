@@ -25,6 +25,7 @@
     "@angular/service-worker": "~7.2.0",
     "@fortawesome/fontawesome-free": "^5.8.2",
     "@types/chart.js": "^2.7.52",
+    "@zxing/library": "^0.12.4",
     "@zxing/ngx-scanner": "1.5.1",
     "angular-bootstrap-md": "^7.5.3",
     "angular2-qrscanner": "^1.0.7",
