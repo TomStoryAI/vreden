@@ -6,6 +6,7 @@ import { Result } from "@zxing/library";
 import { MatSelectChange } from "@angular/material/select";
 
 import { ModalDirective } from "angular-bootstrap-md";
+import { SchnitzelService } from './schnitzel.service';
 
 @Component({
   selector: "app-qrcode",
@@ -20,14 +21,14 @@ export class QrcodeComponent implements OnInit {
   hasPermission: boolean;
   qrResultString: string = "Placeholder for QR CODE";
   qrResult: Result;
-  qrResultStringSet: Set<string> = new Set<string>();
+  
 
   availableDevices: MediaDeviceInfo[];
   currentDevice: MediaDeviceInfo;
   ngVersion = VERSION.full;
   @ViewChild("basicModal") basicModal: ModalDirective;
   @ViewChild("confirmationModal") confirmationModal: ModalDirective;
-  constructor() {}
+  constructor(private schnitzelService : SchnitzelService) {}
 
   onClose(event: any) {
     this.closeScanner();
@@ -63,7 +64,7 @@ export class QrcodeComponent implements OnInit {
   }
 
   handleQrCodeResult(resultString: string) {
-    this.qrResultStringSet.add(resultString);
+    this.schnitzelService.add(resultString);
     this.qrResultString = resultString;
     this.closeScanner();
     this.basicModal.toggle();

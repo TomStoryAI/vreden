@@ -1,10 +1,3 @@
-<ng-template #notfound>
-  <i class='fas fa-times-circle'>Noch nicht gefunden!</i>
-</ng-template>
-<ng-template #found>
-  <i class="fas fa-check-circle">QR-Code Gefunden!</i>
-</ng-template>
-
 <div class="scanner-shell" [hidden]="!hasDevices">
   <header>
 
@@ -20,39 +13,20 @@
   </header>
 
   <h2 class="mt-5">Finde die folgenden QRCodes:</h2>
-  <ul class="list-group list-group-horizontal">
-    <li class="list-group-item w-25 p-3">
-      <div><img src="/assets/img/herzblut.jpg" class="rounded mx-auto d-block img-fluid" /></div>
-    </li>
-    <li class="list-group-item w-50 p-3">Dieses Café hat gerade erst aufgemacht.
-      Nach jahrelangem Stillstand geht es hier endlich wieder zur Sache, in der Nähe des Cafés findest du einen Stuhl,
-      der deinen QR-Code enthält!</li>
-    <li class="list-group-item w-25 p-3">
-      <div *ngIf="qrResultStringSet.has('quovadis');then found else notfound">
-      </div>
-    </li>
-  </ul>
 
-  <ul class="list-group list-group-horizontal">
-    <li class="list-group-item w-25 p-3">
-      <div><img src="/assets/img/venezia.jpg" class="rounded mx-auto d-block img-fluid" /></div>
-    </li>
+  <app-schnitzel imageSrcPath="/assets/img/herzblut.jpg" text="Dieses Café hat gerade erst aufgemacht.
+  Nach jahrelangem Stillstand geht es hier endlich wieder zur Sache, in der Nähe des Cafés findest du einen Stuhl,
+  der deinen QR-Code enthält!" qrKeyWord="quovadis"></app-schnitzel>
 
-    <li class="list-group-item w-50 p-3">Bella Italia! Fast nirgendwo schmeckt die Portion Eis so gut wie hier.
-      Angeblich verbirgt sich im sonnigen Garten der nächste Hinweis auf unseren QR-Code!</li>
+  <app-schnitzel imageSrcPath="/assets/img/venezia.jpg" text="Bella Italia! Fast nirgendwo schmeckt die Portion Eis so gut wie hier.
+Angeblich verbirgt sich im sonnigen Garten der nächste Hinweis auf unseren QR-Code!"
+    qrKeyWord="http://bit.ly/wifischnitzel">
+  </app-schnitzel>
 
-    <li class="list-group-item w-25 p-3">
-      <div *ngIf="qrResultStringSet.has('http://bit.ly/wifischnitzel');else notfound">
-        <i class="fas fa-check-circle">QR-Code Gefunden!</i>
-      </div>
-    </li>
+  <app-schnitzel imageSrcPath="/assets/img/daniel.jpg" text="Finde Daniel Lieblings QR-Code im Baum!"
+      qrKeyWord="http://doc-brown.eu/denkt-digital/">
+    </app-schnitzel>
 
-  </ul>
-
-
-
-  <a *ngFor="let qrcode of qrResultStringSet">{{qrcode}}<i *ngIf="qrcode == 'https://denkt.digital.de'"
-      class="fas fa-check"></i><br></a>
 
   <div mdbModal #basicModal="mdbModal" class="modal fade huge" tabindex="-1" role="dialog"
     aria-labelledby="myBasicModalLabel" aria-hidden="true" (close)="onClose($event)" (open)="onOpen($event)">
@@ -75,7 +49,8 @@
     </div>
   </div>
 
-  <div mdbModal #confirmationModal="mdbModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myConfirmationModalLabel" aria-hidden="true">
+  <div mdbModal #confirmationModal="mdbModal" class="modal fade" tabindex="-1" role="dialog"
+    aria-labelledby="myConfirmationModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
       <div class="modal-content">
         <div class="modal-header">
@@ -85,11 +60,12 @@
           <h4 class="modal-title w-100" id="myModalLabel">QR Code gefunden!</h4>
         </div>
         <div class="modal-body">
-            <a target="_blank" rel="noopener noreferrer" href="{{qrResultString}}"><button
+          <a target="_blank" rel="noopener noreferrer" href="{{qrResultString}}"><button
               class="btn btn-primary vreden-bg-color-primary w-100">{{qrResultString}}</button></a>
         </div>
         <div class="modal-footer">
-          <button type="button" mdbBtn  class="waves-light vreden-bg-color-secondary text-white w-100" aria-label="Close" (click)="confirmationModal.hide()" mdbWavesEffect>Schliessen</button>
+          <button type="button" mdbBtn class="waves-light vreden-bg-color-secondary text-white w-100" aria-label="Close"
+            (click)="confirmationModal.hide()" mdbWavesEffect>Schliessen</button>
         </div>
       </div>
     </div>

@@ -1,0 +1,21 @@
+<ng-template #notfound>
+  <i class='fas fa-times-circle'>Noch nicht gefunden!</i>
+</ng-template>
+<ng-template #found>
+  <i class="fas fa-check-circle">QR-Code Gefunden!</i>
+</ng-template>
+
+<ul class="list-group list-group-horizontal">
+  <li class="list-group-item w-25 p-3">
+    <div><img src="{{this.imageSrcPath}}" class="rounded mx-auto d-block img-fluid" /></div>
+  </li>
+
+  <li class="list-group-item w-50 p-3">{{this.text}}</li>
+
+  <li class="list-group-item w-25 p-3">
+    <div *ngIf="this.schnitzelService.get().has(this.qrKeyWord);else notfound">
+      <i class="fas fa-check-circle">QR-Code Gefunden!</i>
+    </div>
+  </li>
+
+</ul>

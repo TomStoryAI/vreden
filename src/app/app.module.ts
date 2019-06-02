@@ -14,6 +14,8 @@ import { ZXingScannerModule } from '@zxing/ngx-scanner';
 import { QrcodeComponent } from './qrcode/qrcode.component';
 import { HomeComponent } from './home/home.component';
 import { CommonModule } from '@angular/common';
+import { SchnitzelComponent } from './qrcode/schnitzel/schnitzel.component';
+import { SchnitzelService } from './qrcode/schnitzel.service';
 
 
 @NgModule({
@@ -22,7 +24,8 @@ import { CommonModule } from '@angular/common';
     FooterComponent,
     HeaderComponent,
     QrcodeComponent,
-    HomeComponent
+    HomeComponent,
+    SchnitzelComponent
   ],
   imports: [
     CommonModule,
@@ -35,7 +38,7 @@ import { CommonModule } from '@angular/common';
     MatSnackBarModule,
     BrowserAnimationsModule,
   ],
-  providers: [],
+  providers: [SchnitzelService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
